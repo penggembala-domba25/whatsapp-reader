@@ -100,7 +100,6 @@
                             </b-list-group-item>
                         </b-list-group>
                     </b-card>
-                    
                 </b-col>
             </b-row>
         </b-container>

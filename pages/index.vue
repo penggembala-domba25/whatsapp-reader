@@ -156,15 +156,3 @@ export default {
   }  
 }
 </script>
-
-<style scoped>
-  .body-container {
-    min-height: 100vh;
-  }
-
-  .content {
-    margin: 2%;
-    min-height: 85vh;
-  }
-  
-</style>

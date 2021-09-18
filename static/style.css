@@ -1,3 +1,12 @@
+.body-container {
+    min-height: 100vh;
+}
+
+.content {
+    margin: 2%;
+    min-height: 85vh;
+}
+
 li {
     list-style: none;
 }
@@ -9,7 +18,6 @@ ul {
 
 .controller-file {
     margin: 2% 0;
-    /* 0; 2%;*/
 }
 
 .result-file {
@@ -20,7 +28,6 @@ ul {
 .result-file p {
     margin: 8px 0;
     flex: auto;
-    /* margin-right: auto; */
 }
 
 .result-file b-button {
@@ -29,10 +36,8 @@ ul {
 }
 
 .status-bar {
-    /* height: 25px; */
     background: #004e45;
     color: #fff;
-    /* font-size: 14px; */
     padding: 16px 8px;
 }
 
@@ -67,7 +72,6 @@ li.info:nth-last-child(1) {
 .chat li {
     word-wrap: break-word;
     background: white;
-    /* border-radius: 1.125rem 1.125rem 1.125rem 0; */
     border-radius: 1.125rem;
     margin: 0.25rem 0;
     padding: 0.5rem 1rem;
@@ -79,7 +83,6 @@ li.info:nth-last-child(1) {
 .chat li.sent-chat {
     background: #e1ffc7;
     color: black;
-    /* border-radius: 1.125rem 1.125rem 0 1.125rem; */
     margin: 0.25rem 0 0 auto;
 }
 

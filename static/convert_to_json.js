@@ -9,12 +9,7 @@ function convert_to_json(file) {
 
     let result_splitted_file = split_with(file, regex_get_time, true)
 
-    // let users = match_with(file, regex_get_user, [/:\s/g, /-\s/g], ["", ""], true)
-    // console.log(this.users)
-
     let chat_time = match_with(file, regex_get_time, [/\s$/g], [""])
-
-    // console.log(users, chat_time)
 
     for (let i = 0; i < result_splitted_file.length; i++) {
         if (result_splitted_file[i].search(regex_get_user) != 0) {
@@ -33,10 +28,6 @@ function convert_to_json(file) {
             let user = match_with(result_splitted_file[i], regex_get_user).toString()
             user = replace_with(user, [/:\s/g, /-\s/g], ["", ""])
 
-            // let prev_user = i - 1 > 0 ? match_with(result_splitted_file[i-1], regex_get_user).toString() : ""
-            // prev_user = replace_with(prev_user, [/:\s/g, /-\s/g], ["", ""])
-
-            // console.log(user)
             if (!result_json.hasOwnProperty("users")) {
                 result_json["users"] = []
             }
@@ -49,7 +40,6 @@ function convert_to_json(file) {
                 result_json["chats"] = []
             }
 
-            // this solution
             if (chat_topic.hasOwnProperty(user)) {
                 if (result_splitted_file[i - 1]) {
                     let prev_user = match_with(result_splitted_file[i - 1], regex_get_user).toString()
@@ -60,8 +50,6 @@ function convert_to_json(file) {
 
                         chat_topic = new Object
                     }
-
-                    // console.log(prev_user)
                 }
             }
 
@@ -75,12 +63,9 @@ function convert_to_json(file) {
                 "id": id
             })
 
-            // console.log(chat_topic)
             id++
         }
     }
-
-    // console.log(result_json)
 
     return result_json
 }
@@ -104,9 +89,6 @@ function match_with(text, regex, replacing_regex = [], replacing_to = [], is_uni
 
     for (let i = 0; i < result.length; i++) {
         result[i] = replace_with(result[i], replacing_regex, replacing_to)
-            // for (let j = 0; j < replacing_regex.length; j++) {
-            //   result[i] = result[i].replace(replacing_regex[j], replacing_to[j])
-            // }
     }
 
     return result
@@ -123,14 +105,5 @@ function replace_with(text, replacing_regex = [], replacing_to = []) {
 
     return text
 }
-
-// function get_split(text) {
-//   let regex = /\d{1,2}\/\d{1,2}\/\d{1,2}, \d{1,2}:\d{1,2}\s[-]\s/gim;
-
-//   text = text.split(regex)
-//   text.shift()
-
-//   return text
-// }
 
 export default convert_to_json
